@@ -16,6 +16,9 @@ body {
   margin: auto;
 
 }
+h2{
+  color: #FEF2BF;
+}
 @media only screen and (min-width : 320px) {
   .container {
     display: block;
