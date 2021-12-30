@@ -20,7 +20,7 @@ $("div.btn").on("click", function(e){
 function nextSequence()
 {
     userClickedPattern = [];
-    $("h1").text(`Level ${level}`);
+    $("h1").text(`${level} שלב`);
     level++;
     var randomNumber = Math.floor(Math.random()*4);
     var randomChosenColour = buttonColours[randomNumber];
@@ -59,7 +59,7 @@ function checkAnswer(currentLevel)
         setTimeout(function(){
             $("body").removeClass('game-over');
         }, 200);
-        $("h1").text("Game Over, Press Any Key to Restart");
+        $("h1").text("המשחק נגמר, לחץ על המסך להתחיל שוב");
         startOver();
     }
 }
