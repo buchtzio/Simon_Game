@@ -16,7 +16,19 @@ body {
   margin: auto;
 
 }
-
+@media only screen and (min-width : 320px) {
+  .container {
+    display: block;
+    width: 80%;
+    margin: auto;
+  }
+  div.row{
+    margin: 150px 40px;
+  }
+  #level-title {
+    font-size: 2rem;
+  }
+}
 .btn {
   margin: 25px;
   display: inline-block;
