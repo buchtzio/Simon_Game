@@ -3,7 +3,7 @@ var started = false;
 var gamePattern = [];
 var userClickedPattern = [];
 var buttonColours = ["red", "blue", "green", "yellow"];
-$(document).on("keydown", function(){
+$(document).on("click", function(){
     if(!started){
         nextSequence();
         started = true;
