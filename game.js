@@ -3,7 +3,7 @@ var started = false;
 var gamePattern = [];
 var userClickedPattern = [];
 var buttonColours = ["red", "blue", "green", "yellow"];
-$(document).on("click", function(){
+$(document).on("touchstart", function(){
     if(!started){
         nextSequence();
         started = true;
