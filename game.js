@@ -3,7 +3,7 @@ var started = false;
 var gamePattern = [];
 var userClickedPattern = [];
 var buttonColours = ["red", "blue", "green", "yellow"];
-$(document).on("touchstart", function(){
+$('div#start').on("click", function(){
     if(!started){
         nextSequence();
         started = true;
@@ -25,9 +25,16 @@ function nextSequence()
     var randomNumber = Math.floor(Math.random()*4);
     var randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
-    $(`#${randomChosenColour}`).fadeIn(100).fadeOut(100).fadeIn(100);
-    var newSound = new Audio(`./sounds/${randomChosenColour}.mp3`);
-    newSound.play();
+    const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    (async function() {
+        for (let index = 0; index < gamePattern.length; index++) {
+            $(`#${gamePattern[index]}`).fadeIn(100).fadeOut(100).fadeIn(100);
+            var sound = gamePattern[index];
+            var newSound = new Audio(`./sounds/${sound}.mp3`);
+            newSound.play();
+            await delay(500);
+        }
+    })();
 }
 
 function playSound(name)
